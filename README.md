@@ -3,8 +3,8 @@ Bucket: dz-demo-mt
 Region: us-east-1 (with replication to us-east-2)
 
 **Key Features:**
-Data Lineage Tracking: Complete visibility from raw sources through transformations to final output
-Automated Schema Discovery: Crawlers maintain up-to-date metadata
-Partitioned Storage: Optimized for time-based queries
-Geographic Redundancy: Cross-region replication for resilience
-Multi-Table Join: Combines sales and regional data for enriched analytics
+Data Lineage Tracking: Complete visibility from raw sources through transformations to final output.
+Automated Schema Discovery: Crawlers maintain up-to-date metadata.
+Partitioned Storage: Optimized for time-based queries.
+Geographic Redundancy: Cross-region replication for resilience.
+Multi-Table Join: Combines sales and regional data for enriched analytics.
