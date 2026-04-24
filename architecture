@@ -1,0 +1,28 @@
+Architecture Overview
+Flow Stages:
+Stage 1: Raw Data Ingestion
+S3 Bucket: dz-demo-mt
+Paths:
+raw/sales/ - Sales transaction data
+raw/region/ - Regional reference data
+Stage 2: Metadata Discovery
+Crawler: sales-mt-tst → Scans raw/sales/
+Crawler: region-mt-tst → Scans raw/region/
+Catalog Tables:
+sal_sales - Sales table schema
+reg_region - Region table schema
+Stage 3: ETL Processing
+Glue Job: dz-mt-tst
+Reads from both catalog tables
+Performs join operation
+Applies transformations and aggregations
+Writes results to processed layer
+Stage 4: Catalog Update
+Output Path: processed/sales_joined/
+Catalog Table: sal_join_stg
+Partitioning: year/month/day for efficient querying
+Stage 5: Cross-Region Replication
+Source Region: us-east-1
+Target Region: us-east-2
+Replication Scope: processed/sales_joined/ directory
+Purpose: Disaster recovery and multi-region access
